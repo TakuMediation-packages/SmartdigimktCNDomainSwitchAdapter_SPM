@@ -7,14 +7,34 @@ let package = Package(
     products: [
         .library(
             name: "SmartdigimktCNDomainSwitchAdapter",
-            targets: ["SmartdigimktCNDomainSwitchAdapter"]
+            targets: [
+                "SmartdigimktCNDomainSwitchAdapter",
+                "SmartdigimktCNDomainSwitchAdapterSupport"
+            ]
         ),
+    ],
+    dependencies: [
+        .package(
+            url: "https://github.com/TakuMediation-packages/SmartdigimktCNSDK_SPM.git",
+            exact: "6.5.80"
+        )
     ],
     targets: [
         .binaryTarget(
             name: "SmartdigimktCNDomainSwitchAdapter",
-            url: "https://topon-sdk-release.oss-cn-hangzhou.aliyuncs.com/Temp/juhesdk/KuYingSDK/6.5.80/KuYingSDK.zip",
-            checksum: "db355954978972dc03657fb7cb52701eaff96eaa5dbb3c598e014de2af7ffc11"
+            url: "http://sz-kuying-sdk.oss-cn-shenzhen.aliyuncs.com/pkgs/SDK/iOS/DomainSwitch/v6.5.66/SmartdigimktCNDomainSwitchAdapter.zip",
+            checksum: "2cbb10f1b2a6f45e736d1fc634cabcf015a93988bd1a38ecf09f2a0f7ec09e70"
+        ),
+        // 包装 target：同时依赖 Adapter 的 binary 和 CNSDK 的 product
+        .target(
+            name: "SmartdigimktCNDomainSwitchAdapterSupport",
+            dependencies: [
+                "SmartdigimktCNDomainSwitchAdapter",
+                .product(
+                    name: "SmartdigimktCNSDK",
+                    package: "SmartdigimktCNSDK_SPM"
+                )
+            ]
         )
     ]
 )

@@ -32,7 +32,7 @@ let package = Package(
                 "SmartdigimktCNDomainSwitchAdapter",
                 .product(
                     name: "SmartdigimktCNSDK",
-                    package: "SmartdigimktCNSDK_SPM"
+                    package: "SmartdigimktCNSDK"
                 )
             ]
         )

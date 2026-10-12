@@ -22,7 +22,7 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "SmartdigimktCNDomainSwitchAdapter",
-            url: "http://sz-kuying-sdk.oss-cn-shenzhen.aliyuncs.com/pkgs/SDK/iOS/DomainSwitch/v6.5.66/SmartdigimktCNDomainSwitchAdapter.zip",
+            url: "https://sz-kuying-sdk.oss-cn-shenzhen.aliyuncs.com/pkgs/SDK/iOS/DomainSwitch/v6.5.66/SmartdigimktCNDomainSwitchAdapter.zip",
             checksum: "2cbb10f1b2a6f45e736d1fc634cabcf015a93988bd1a38ecf09f2a0f7ec09e70"
         ),
         // 包装 target：同时依赖 Adapter 的 binary 和 CNSDK 的 product
@@ -32,7 +32,7 @@ let package = Package(
                 "SmartdigimktCNDomainSwitchAdapter",
                 .product(
                     name: "SmartdigimktCNSDK",
-                    package: "SmartdigimktCNSDK"
+                    package: "SmartdigimktCNSDK_SPM"
                 )
             ]
         )

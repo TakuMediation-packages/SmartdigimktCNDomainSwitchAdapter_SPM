@@ -3,7 +3,7 @@ import PackageDescription
 
 let package = Package(
     name: "SmartdigimktCNDomainSwitchAdapter",
-    platforms: [.iOS(.v12)],
+    platforms: [.iOS(.v10)],
     products: [
         .library(
             name: "SmartdigimktCNDomainSwitchAdapter",
